@@ -3,10 +3,16 @@ import ModelHandler from "../handler/ModelHandler";
 
 export interface Data {}
 
-export default abstract class RedisModel implements Crud{
+export default abstract class RedisModel implements Crud {
+
     public databaseId: number;
     public folder: string;
 
+    /**
+     *
+     * @param databaseId
+     * @param folder
+     */
     protected constructor(databaseId: number, folder: string) {
         this.databaseId = databaseId;
         this.folder = folder;

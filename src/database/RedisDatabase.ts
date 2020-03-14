@@ -14,10 +14,10 @@ export class RedisDatabase extends RedisClientOverride implements Database{
         }));
     }
 
-    public connect(): Promise<unknown> {
-        return new Promise<RedisDatabase & Database>(
+    public connect(): Promise<RedisDatabase> {
+        return new Promise<RedisDatabase>(
             (resolve: any) => this.client.on('connect', resolve)
-        ).then((value: unknown) => ModelHandler.setDatabaseConnector(this));
+        ).then(() => ModelHandler.setDatabaseConnector(this)).then(() => this);
     }
 
     public closeConnection(): Promise<void> {

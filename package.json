@@ -1,10 +1,11 @@
 {
   "name": "@jordanbonaldi/databasecollector",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "scripts": {
     "watch": "nodemon",
     "build": "rimraf ./build && tsc",
-    "start": "npm run build && node build/index.js"
+    "start": "npm run build && node build/index.js",
+    "prepublish": "npm run build && npm-auto-version"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -13,6 +14,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/node": "^13.9.1",
+    "npm-auto-version": "^1.0.0",
     "redis": "^3.0.2"
   },
   "devDependencies": {
