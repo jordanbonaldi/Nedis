@@ -32,5 +32,5 @@ export default interface Crud {
      *
      * @param id
      */
-    getAll<T>(id: string): Promise<T[]>;
+    getAll<T>(id: string): Promise<{value: string, data: T[]}[]>;
 }
