@@ -1,6 +1,6 @@
 {
   "name": "@jordanbonaldi/databasecollector",
-  "version": "1.1.8",
+  "version": "1.1.13",
   "scripts": {
     "watch": "nodemon",
     "build": "rimraf ./build && tsc",
