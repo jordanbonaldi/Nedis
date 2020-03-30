@@ -107,13 +107,14 @@ export abstract class RedisClientOverride{
      *
      * @param key
      */
-    getAll<T>(key: string): Promise<{value: string, data: T[]}[]> {
-        return new Promise<{value: string, data: T[]}[]>((resolve: any) =>
+    getAll<T>(key: string): Promise<{value: string, data: T}[]> {
+        return new Promise<{value: string, data: T}[]>((resolve: any) =>
             this.client.keys(`${key}:*`,
                 (err: any, value: any) => resolve(Promise.all(value.map((k: string) =>
                     this.get(k).then((data) => {
+                        let splittedValues: string[] = k.split(':');
                         return {
-                            value: k.split(':')[1],
+                            value: splittedValues[splittedValues.length - 1],
                             data: data
                         }
                     })

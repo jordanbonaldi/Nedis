@@ -55,7 +55,7 @@ export default class RedisCrud implements Crud {
         return this.select().then(() => this.create(id, JSON.stringify(data)))
     }
 
-    getAll<T>(id: string): Promise<{value: string, data: T[]}[] & Data> {
+    getAll<T>(id: string): Promise<{value: string, data: T}[] & Data> {
         return this.select().then(() => this.client.getAll(id));
     }
 

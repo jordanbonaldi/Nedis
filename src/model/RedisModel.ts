@@ -34,7 +34,7 @@ export default abstract class RedisModel implements Crud {
         return ModelHandler.getModel(this).update(`${this.folder}:${id}`, data);
     }
 
-    getAll<T>(): Promise<{value: string, data: T[]}[] & Data> {
+    getAll<T>(): Promise<{value: string, data: T}[] & Data> {
         return ModelHandler.getModel(this).getAll(`${this.folder}`);
     }
 }
