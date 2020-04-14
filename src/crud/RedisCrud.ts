@@ -52,7 +52,7 @@ export default class RedisCrud implements Crud {
      * @param data
      */
     update<T>(id: string, data: Data): Promise<T & Data> {
-        return this.select().then(() => this.create(id, JSON.stringify(data)))
+        return this.select().then(() => this.create(id, data))
     }
 
     getAll<T>(id: string): Promise<{value: string, data: T}[] & Data> {
