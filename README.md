@@ -30,9 +30,9 @@ First you have to create a Model class extending the abstract RedisModel as foll
 	  
 export default new class CategoryModel extends RedisModel {  
 	  constructor() {
-		  // First arguments is the database number
-		  // Second arguments is the folder folder name
-		  super(2, 'categories');  
+	  // First arguments is the database number
+	  // Second arguments is the folder folder name
+	  super(2, 'categories');  
 	 }  
 }
 ```
@@ -63,7 +63,8 @@ CategoryModel.read<CategoryInterface>('6').then((category: CategoryInterface) =>
  CategoryModel.update<CategoryInterface>('6', {  
   ...category,  
   assets: ["ETHUSD"]  
- }));
+ })
+);
 ```
 
 ## Models Methods
