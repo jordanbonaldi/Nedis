@@ -1,6 +1,6 @@
 {
-  "name": "@jordanbonaldi/databasecollector",
-  "version": "1.1.14",
+  "name": "@neferett/nedis",
+  "version": "1.1.17",
   "scripts": {
     "watch": "nodemon",
     "build": "rimraf ./build && tsc",
@@ -8,7 +8,7 @@
     "prepublish": "npm run build && npm-auto-version"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
+    "registry": "https://registry.npmjs.org"
   },
   "keywords": [],
   "author": "",

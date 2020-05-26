@@ -1,8 +1,6 @@
 import RedisModel from "../model/RedisModel";
-import Database from "../database/Database";
 import RedisCrud from "../crud/RedisCrud";
 import RedisClientOverride from "../database/RedisClientOverride";
-import Crud from "../crud/Crud";
 
 export default new (class ModelHandler{
 
